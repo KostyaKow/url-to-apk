@@ -19,17 +19,17 @@
 	<body>
 
 	<!-- kkkkk -->
-	<?php   
-		error_reporting(-1);
+	<?php
+		/*error_reporting(-1);
 		ini_set('display_errors', 'On');
-		date_default_timezone_set('UTC');
+		date_default_timezone_set('UTC');*/
 
 		/*function checkUrl($url) {
 			$urlLen = strlen($url);
 			for ($x = 0; $x < $urlLen; $x++) {
 			}
 		}*/
-		
+
 		$appUrl = $_POST['appUrl'];
 		if ($appUrl == '') {
 			echo '</br>kkkkk</br>';
@@ -42,7 +42,13 @@
 			$currManifest = $dateDirName . 'manifest.json';
 			echo shell_exec('mkdir ' . $dateDirName . ' 2>&1');
 
-			$path = 'export ANDROID_HOME=/url-to-apk-backend/android-sdk-linux; export PATH=$PATH:/url-to-apk-backend/android-sdk-linux/tools; export PATH=$PATH:/url-to-apk-backend/crosswalk; ';
+                  $tools_path = '/usr/share/nginx/html/buz/url-to-apk/cross-new/';
+                  $android_sdk_path =  f;
+                  $path = 'export ANDROID_HOME=/url-to-apk-backend/android-sdk-linux;';
+                  $path = $path . 'export PATH=$PATH:/url-to-apk-backend/android-sdk-linux/tools;';
+                  $path = $path . 'export PATH=$PATH:/url-to-apk-backend/crosswalk; ';
+
+			//$path = 'export ANDROID_HOME=/url-to-apk-backend/android-sdk-linux; export PATH=$PATH:/url-to-apk-backend/android-sdk-linux/tools; export PATH=$PATH:/url-to-apk-backend/crosswalk; ';
 
 			//$manifestFileText = '{"name": "Tablet Updater", "icons": [ {  "src": "icon.png", "sizes": "128x128",  "type": "image/png", "density": "4.0" } ], "start_url": "' . $_POST['url'] . '", "display": "standalone","orientation": "any" }';
 			$manifestFileText = '{"name": "Tablet Updater", "start_url": "' . $_POST['appUrl'] . '", "display": "standalone","orientation": "any" }';
@@ -59,9 +65,9 @@
 
 			echo "<a href='" . $dateDirName . "/Rms_arm.apk'><h1>richardStallamIzBae.apk</h1></a>";
 		}
-	?> 
- 
-  <!--- end kk -->	
+	?>
+
+  <!--- end kk -->
 
 	 <!-- Teaser start -->
 	<section id="teaser">
@@ -88,7 +94,7 @@
 									<input type="text" name="appUrl" id="appURL" class="form-control" placeholder="www.YourWebLink.com">
 								</div>
 								<br><br>
-					
+
 								<div class="input-group drop-off">
 									<span class="input-group-addon"><span class="fa fa-bullhorn"></span>&nbsp;&nbsp;&nbsp;Name</span>
 									<input type="text" name="appName" id="appName" class="form-control" placeholder="Flappy Widget">
@@ -111,7 +117,7 @@
 			</div>
 		</div>
 	</section>
-	
+
   <div class="arrow-down"></div>
   <!-- Teaser end -->
 
@@ -148,6 +154,7 @@
 		</div>
 		<!-- Service Box end -->
 
+
 		<!-- Service Box start -->
 		<div class="col-md-6">
 		<div class="service-box wow fadeInLeft" data-wow-offset="100">
@@ -158,6 +165,7 @@
 		</div>
 		</div>
 		<!-- Service Box end -->
+
 		<!-- Service Box start -->
 		<div class="col-md-6">
 		<div class="service-box wow fadeInRight" data-wow-offset="100">
@@ -190,6 +198,7 @@
 		</div>
 		</div>
 		<!-- Service Box end -->
+
 		<!-- Service Box start -->
 		<div class="col-md-6">
 		<div class="service-box wow fadeInRight" data-wow-offset="100">
@@ -225,8 +234,8 @@
 		  </div>
 		</div>
 
-		  
-		<div id=analytics style="display:none;">
+
+		<!-- <div id=analytics style="display:none;">
 			<a title="Web Analytics" href="http://clicky.com/100850988"><img alt="Web Analytics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>
 			<script type="text/javascript">
 				var clicky_site_ids = clicky_site_ids || [];
@@ -240,9 +249,9 @@
 				})();
 			</script>
 			<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100850988ns.gif" /></p></noscript>
-		</div> 		  
-		  
-		  
+		</div> -->
+
+
 	</footer> <!-- Footer end -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
